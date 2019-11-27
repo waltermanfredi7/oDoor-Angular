@@ -5,10 +5,49 @@
       <h3 class="white-text text-center">Unlock your door</h3>
     </div>
   </div>
+
+
   <div class="col-12 text-center pt-5">
-    <app-button label="LOGIN" (clickEvent)="hello()"></app-button>
-    <app-divider></app-divider>
-    <app-button label="SIGNUP" (clickEvent)="hello()"></app-button>
+
+
+    <div class="login-form" [class.opened]="login_opened">
+        <label>E-mail</label>
+        <input type="text" [(ngModel)]="email">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password">
+
+        <p (click)="login_opened = false">Non sei registrato?</p>
+    </div>
+    
+    <div class="login button"  [class.login-opened]="login_opened" [class.register-opened]="register_opened" >
+        <app-button  label="LOGIN" (clickEvent)="loginClick()"></app-button>
+    </div>
+    
+    <div class="divider"  [class.login-opened]="login_opened" [class.register-opened]="register_opened">
+      <app-divider></app-divider>
+    </div>
+    
+    <div class="register-form" [class.opened]="register_opened">
+        <label>E-mail</label>
+        <input type="text" [(ngModel)]="email">
+
+        <label>Conferma E-mail</label>
+        <input type="text" [(ngModel)]="verify_email">
+
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password">
+
+        <label>Conferma Password</label>
+        <input type="password" [(ngModel)]="verify_password">
+
+        <p (click)="register_opened = false">Hai già un account?</p>
+    </div>
+
+    <div class="button signup" [class.login-opened]="login_opened" [class.register-opened]="register_opened">
+        <app-button  label="SIGNUP" (clickEvent)="registerClick()" ></app-button>
+
+    </div>
+    
   </div>
 
 </div>
