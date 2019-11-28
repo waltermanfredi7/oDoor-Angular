@@ -6,15 +6,17 @@ import { WelcomeScreenComponent } from './pages/welcomeScreen/welcomeScreen.comp
 import { ButtonComponent } from './component/button/button.component';
 import {FormsModule} from '@angular/forms';
 import { LogoComponent } from './component/logo/logo.component';
-import { DividerComponent } from './component/divider/divider.component';
+import {DividerComponent} from './component/divider/divider.component';
+import {FooterComponent} from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WelcomeScreenComponent,
-    ButtonComponent,
-    LogoComponent,
-    DividerComponent
+      AppComponent,
+      WelcomeScreenComponent,
+      ButtonComponent,
+      LogoComponent,
+      DividerComponent,
+      FooterComponent
   ],
   imports: [
     BrowserModule,
